@@ -1,0 +1,60 @@
+/* ---------- Книжные полки ---------- */
+:root, [data-theme="paper"] { --plank-top: #C9A877; --plank-bot: #A8845A; }
+[data-theme="cocoa"] { --plank-top: #A97F57; --plank-bot: #84603E; }
+[data-theme="lamp"] { --plank-top: #6B5238; --plank-bot: #4D3A27; }
+[data-theme="lavender"] { --plank-top: #BBA4CF; --plank-bot: #9A82B3; }
+
+.shelf-title { margin: 28px 0 14px; }
+.shelf { margin-bottom: 26px; }
+.shelf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 0 8px; }
+.shelf-grid.captions { margin-top: 10px; }
+.shelf-book { display: block; transition: transform .15s ease; }
+.shelf-book:active { transform: translateY(-4px) scale(.98); }
+.plank {
+  height: 14px;
+  margin-top: -2px;
+  border-radius: 3px;
+  background: linear-gradient(var(--plank-top), var(--plank-bot));
+  box-shadow: 0 7px 10px -6px rgba(0, 0, 0, .4);
+}
+.shelf-caption { display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; font-size: .78rem; line-height: 1.3; color: var(--soft); }
+.shelf-caption small { font-size: .74rem; }
+
+.book-cover { position: relative; aspect-ratio: 3 / 4; border-radius: 3px 8px 8px 3px; overflow: hidden; background: var(--line); box-shadow: 2px 4px 10px -2px rgba(0, 0, 0, .4), inset 4px 0 0 rgba(255, 255, 255, .08); }
+.book-cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.book-placeholder { width: 100%; height: 100%; display: grid; place-items: center; padding: 10px; text-align: center; color: #FFF8EC; font-family: "Marck Script", cursive; font-size: 1.1rem; line-height: 1.2; }
+
+.stars { display: inline-flex; gap: 1px; letter-spacing: 0; }
+.star { color: var(--line); font-size: 1rem; line-height: 1; }
+.star.on { color: var(--accent); }
+.star-input { display: flex; gap: 4px; }
+.star-input button { font-size: 2rem; line-height: 1; padding: 4px; color: var(--line); transition: color .15s, transform .12s ease; }
+.star-input button.on { color: var(--accent); }
+.star-input button:active { transform: scale(.85); }
+
+/* ---------- Страница книги ---------- */
+.book-hero { display: flex; gap: 18px; align-items: flex-end; margin-bottom: 22px; }
+.book-hero-cover { width: 42%; max-width: 190px; flex: none; }
+.book-hero-info h1 { font-size: 1.9rem; margin-bottom: 4px; word-break: break-word; }
+.book-hero-info p { margin: 0 0 6px; }
+.book-count { font-family: "Marck Script", cursive; font-size: 1.6rem; margin: 2px 0; line-height: 1.2; }
+.book-quote { margin: 12px 0; padding: 4px 0 4px 14px; border-left: 3px solid var(--accent); font-style: italic; }
+.book-quote p { margin: 0 0 2px; white-space: pre-wrap; }
+.book-quote cite { font-size: .85rem; color: var(--soft); font-style: normal; }
+.quote-edit, .quote-add { margin: 14px 0 0; }
+.quote-add textarea { display: block; width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); resize: vertical; }
+.quote-edit-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; }
+.quote-edit-row input { flex: 1; min-width: 0; min-height: 40px; padding: 0 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); }
+.impression { white-space: pre-wrap; margin: 0; }
+.cover-pick { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: 14px; }
+.cover-pick-img { width: 120px; }
+
+/* ---------- Отчёт: график ---------- */
+.chart { display: block; width: 100%; height: auto; margin: 8px 0 4px; }
+.chart-grid { stroke: var(--line); stroke-width: 1; stroke-dasharray: 3 4; }
+.chart-line { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; }
+.chart-dot { fill: var(--accent); stroke: var(--card); stroke-width: 1.5; }
+.chart text { fill: var(--soft); font-size: 11px; font-family: "Lora", serif; }
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 16px; margin: 10px 0 0; }
+.stat-grid dt { font-size: .8rem; font-style: italic; color: var(--soft); }
+.stat-grid dd { margin: 0; font-size: 1.05rem; }

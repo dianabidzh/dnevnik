@@ -1,0 +1,44 @@
+/* ---------- Полезное ---------- */
+.search { width: 100%; min-height: 46px; margin-bottom: 16px; padding: 0 16px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); }
+.search:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+.folder-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.folder-card { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; padding: 16px; text-decoration: none; color: inherit; background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); transition: transform .12s ease; animation: pop .3s ease both; }
+.folder-card:active { transform: scale(.97); }
+.folder-card strong { font-weight: 500; word-break: break-word; }
+.folder-card small { color: var(--soft); }
+.folder-emoji { font-size: 2.2rem; line-height: 1.1; margin-bottom: 6px; }
+.folder-emoji.big { font-size: 2.6rem; margin: 0; }
+.folder-head { display: flex; align-items: center; gap: 12px; }
+.folder-head h1 { word-break: break-word; }
+
+.material-card { display: block; text-decoration: none; color: inherit; transition: transform .12s ease; }
+.material-card:active { transform: scale(.985); }
+.material-url { display: block; color: var(--accent); font-size: .9rem; margin-bottom: 4px; word-break: break-all; }
+.material-snippet { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; color: var(--soft); margin: 4px 0 8px; white-space: pre-wrap; }
+.thumb-row { display: flex; gap: 6px; margin: 8px 0 4px; }
+.thumb { width: 52px; height: 52px; border-radius: 8px; overflow: hidden; background: var(--line); display: grid; place-items: center; font-size: .8rem; color: var(--soft); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.material-list.plain { list-style: none; margin: 0; padding: 0; }
+.result-row { display: flex; gap: 12px; align-items: center; padding: 10px 0; text-decoration: none; color: inherit; border-bottom: 1px dashed var(--line); }
+.result-row small { display: block; color: var(--soft); }
+.result-emoji { font-size: 1.6rem; }
+
+/* вложения */
+.att-list { list-style: none; margin: 6px 0 10px; padding: 0; }
+.att-row { display: flex; align-items: center; gap: 12px; width: 100%; padding: 8px 0; text-align: left; border-bottom: 1px dashed var(--line); }
+.att-thumb { flex: none; width: 44px; height: 44px; border-radius: 8px; overflow: hidden; background: var(--line); display: grid; place-items: center; font-size: 1.4rem; }
+.att-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.att-name { flex: 1; min-width: 0; display: flex; flex-direction: column; word-break: break-word; }
+.att-name small { color: var(--soft); font-size: .78rem; }
+.att-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+.att-buttons .btn { flex: 1; min-width: 140px; }
+
+/* выбор смайлика */
+.emoji-pick { text-align: center; }
+.emoji-input { width: 96px; height: 96px; font-size: 3rem; text-align: center; border: 2px dashed var(--line); border-radius: 22px; background: var(--bg); }
+.emoji-input:focus { outline: none; border-color: var(--accent); }
+.emoji-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; }
+.emoji-grid button { font-size: 1.5rem; padding: 6px 0; border-radius: 10px; }
+.emoji-grid button.on { background: var(--line); }

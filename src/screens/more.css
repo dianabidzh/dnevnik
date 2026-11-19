@@ -1,0 +1,69 @@
+/* ---------- Ещё ---------- */
+.save-card { border-color: var(--accent); }
+.save-card .btn { text-decoration: none; margin-top: 6px; }
+.about { text-align: center; margin-top: 8px; }
+
+.toggle-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px dashed var(--line); cursor: pointer; }
+.toggle-row:last-of-type { border-bottom: 0; }
+.toggle-row strong { font-weight: 500; }
+.toggle-row small { display: block; color: var(--soft); font-size: .82rem; }
+.toggle-row input {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: none;
+  position: relative;
+  width: 50px;
+  height: 30px;
+  margin: 0;
+  border-radius: 30px;
+  background: var(--line);
+  transition: background .2s;
+}
+.toggle-row input::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--card);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+  transition: transform .2s;
+}
+.toggle-row input:checked { background: var(--accent); }
+.toggle-row input:checked::after { transform: translateX(20px); }
+
+/* ---------- Приветствие ---------- */
+.welcome {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow-y: auto;
+  background: var(--bg);
+  padding: calc(24px + env(safe-area-inset-top, 0px)) 22px calc(24px + env(safe-area-inset-bottom, 0px));
+  animation: fade .3s ease both;
+}
+.welcome-inner { max-width: 520px; margin: 0 auto; padding-top: 24px; }
+.welcome-inner h1 { margin-bottom: 12px; }
+.welcome-inner h3 { margin: 24px 0 10px; }
+.welcome-tip { margin-top: 20px; padding: 12px 14px; border-radius: 12px; background: var(--card); border: 1px dashed var(--line); }
+.welcome-go { width: 100%; margin-top: 26px; }
+
+/* ---------- Экспорт ---------- */
+.export-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+.export-actions .btn { width: 100%; }
+.export-ready { margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: var(--bg); border: 1px dashed var(--line); }
+.export-ready p { margin: 0 0 10px; }
+.import-label { cursor: pointer; margin-top: 8px; }
+.ok { color: var(--accent); }
+
+/* ---------- Вес и объёмы ---------- */
+.num-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; margin-top: 10px; }
+.num { display: block; }
+.num > span:first-child { display: block; font-style: italic; color: var(--soft); font-size: .9rem; }
+.num-input { display: flex; align-items: baseline; gap: 6px; border-bottom: 1.5px solid var(--line); }
+.num-input input { flex: 1; min-width: 0; padding: 6px 0; border: 0; background: transparent; font-size: 1.15rem; }
+.num-input input:focus { outline: none; }
+.num-input:focus-within { border-bottom-color: var(--accent); }
+.num-input em { color: var(--soft); font-size: .85rem; }
